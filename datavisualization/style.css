@@ -1,0 +1,23 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f2f2f2;
+}
+
+svg {
+  background-color: white;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+}
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: orange;
+}
+
+.axis text {
+  font-size: 12px;
+}
