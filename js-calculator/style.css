@@ -1,4 +1,3 @@
-/* 1. Global Reset & Background */
 * {
   margin: 0;
   padding: 0;
@@ -11,52 +10,46 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); /* Deep space gradient */
+  background: #d9e1e9; /* Soft slate gray */
   overflow: hidden;
 }
 
-/* 2. Calculator Container */
 .calculator {
-  background: rgba(255, 255, 255, 0.05); /* Translucent glass effect */
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #000000;
   padding: 25px;
   border-radius: 30px;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
   width: 340px;
+  border: 1px solid #333;
 }
 
-/* 3. Display Screen */
 #display {
   width: 100%;
   height: 80px;
-  background: rgba(0, 0, 0, 0.2);
-  border: none;
+  background: #1a1a1a;
+  border: 1px solid #333;
   border-radius: 15px;
   margin-bottom: 25px;
   color: white;
   text-align: right;
   padding: 20px;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 300;
   outline: none;
-  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* 4. Buttons Grid */
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
 }
 
-/* 5. Base Button Styling */
 button {
   height: 60px;
   border-radius: 15px;
   border: none;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
+  background: #262626;
+  color: #ffffff;
   font-size: 1.2rem;
   font-weight: 500;
   cursor: pointer;
@@ -67,57 +60,38 @@ button {
 }
 
 button:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: #333333;
   transform: translateY(-2px);
 }
 
 button:active {
   transform: translateY(0px);
-  background: rgba(255, 255, 255, 0.3);
+  background: #404040;
 }
 
-/* 6. Special Button Colors */
-
-/* Operators (+, -, *, /, ^, √) */
 .operator {
-  background: rgba(99, 102, 241, 0.2); /* Indigo tint */
-  color: #818cf8;
+  background: #333333;
+  color: #ff9500;
   font-weight: bold;
   font-size: 1.4rem;
 }
 
-.operator:hover {
-  background: rgba(99, 102, 241, 0.4);
-}
-
-/* Clear Button */
 #clear {
-  background: rgba(239, 68, 68, 0.15); /* Red tint */
+  background: #333333;
   color: #f87171;
 }
 
-#clear:hover {
-  background: rgba(239, 68, 68, 0.3);
-}
-
-/* Equals Button */
 #equals {
-  background: linear-gradient(135deg, #6366f1, #a855f7); 
+  background: #ff9500;
   color: white;
   grid-column: span 1;
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
 }
 
 #equals:hover {
-  filter: brightness(1.2);
-  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+  background: #e68600;
 }
-
 
 button[data-num] {
-  background: rgba(255, 255, 255, 0.08);
-}
-
-button[data-num]:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: #262626;
+  color: #ffffff;
 }
