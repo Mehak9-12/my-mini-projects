@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scatter Plot Example</title>
+
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      canvas {
+        max-width: 600px;
+        margin: 30px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Scatter Plot: Study Hours vs Marks</h2>
+
+    <canvas id="scatterChart"></canvas>
+
+    <script>
+      const dataPoints = [
+        { x: 1, y: 35 },
+        { x: 2, y: 40 },
+        { x: 3, y: 55 },
+        { x: 4, y: 65 },
+        { x: 5, y: 75 },
+      ];
+
+      const ctx = document.getElementById('scatterChart').getContext('2d');
+
+      new Chart(ctx, {
+        type: 'scatter',
+        data: {
+          datasets: [
+            {
+              label: 'Student Performance',
+              data: dataPoints,
+              backgroundColor: 'blue',
+            },
+          ],
+        },
+        options: {
+          scales: {
+            x: {
+              title: {
+                display: true,
+                text: 'Hours Studied',
+              },
+            },
+            y: {
+              title: {
+                display: true,
+                text: 'Marks Obtained',
+              },
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

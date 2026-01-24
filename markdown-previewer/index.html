@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Markdown Previewer</title>
+    <!-- using marked.js as it already understands markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+      body {
+        font-family: Arial;
+        background-color: #f2f2f2;
+        padding: 20px;
+      }
+
+      .container {
+        display: flex;
+        gap: 20px;
+      }
+
+      textarea {
+        width: 50%;
+        height: 400px;
+        font-size: 16px;
+        padding: 10px;
+      }
+
+      #preview {
+        width: 50%;
+        height: 400px;
+        background-color: white;
+        padding: 10px;
+        border: 1px solid #ccc;
+        overflow-y: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Markdown Previewer</h2>
+
+    <div class="container">
+      <textarea id="input">
+# Markdown Previewer Project
+
+## Student Information
+**Course:** Full Stack Development  
+**Platform:** Gooru  
+**Project Type:** Mini Project  
+
+---
+
+## Project Overview
+This project is a **Markdown Previewer** built using **HTML, CSS, and JavaScript**.  
+It allows users to write text in **Markdown format** and instantly see the formatted output.
+
+---
+
+## Features
+- Live Markdown preview
+- Supports headings, bold, italic, lists, links, and code blocks
+- Clean and responsive UI
+- Beginner friendly
+
+---
+
+## Technologies Used
+- HTML
+- CSS
+- JavaScript
+- marked.js
+
+---
+
+## How It Works
+1. User types Markdown text
+2. Input changes are detected
+3. Markdown is converted into HTML
+4. Preview updates in real time
+
+---
+    </textarea
+      >
+
+      <div id="preview"></div>
+    </div>
+
+    <script>
+      const input = document.getElementById('input');
+      const preview = document.getElementById('preview');
+
+      function updatePreview() {
+        preview.innerHTML = marked.parse(input.value);
+      }
+
+      input.addEventListener('input', updatePreview);
+      updatePreview();
+      function showMessage() {
+        console.log('Markdown Previewer is working!');
+      }
+      showMessage();
+    </script>
+  </body>
+</html>
