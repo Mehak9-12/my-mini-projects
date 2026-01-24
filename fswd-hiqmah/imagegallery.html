@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+    <style>
+      .gallery {
+        text-align: center;
+      }
+      .preview {
+        width: 400px;
+        height: 250px;
+        object-fit: cover;
+        border: 2px solid #ccc;
+        margin-bottom: 20px;
+        border-radius: 8px;
+      }
+      .thumbnails {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+      .thumbnails img {
+        width: 90px;
+        height: 60px;
+        object-fit: cover;
+        cursor: pointer;
+        border: 2px solid transparent;
+        border-radius: 6px;
+        transition: border 0.3s;
+      }
+      .thumbnails img.active {
+        border: 2px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gallery">
+      <img
+        id="preview"
+        src="https://img.freepik.com/free-vector/inspirational-quote-watercolour-background_1048-18831.jpg"
+        class="preview"
+        alt="preview"
+      />
+      <div class="thumbnails">
+        <img
+          src="https://img.freepik.com/free-vector/inspirational-quote-watercolour-background_1048-18831.jpg"
+          onclick="changeImage(this)"
+          class="active"
+          alt="default Thumbnail "
+        />
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/5cf6ba117951ba0001a616e1/bbc294a9-9297-4376-bdae-d70386231475/inspirational+quote"
+          alt="Thumbnail 2"
+          onclick="changeImage(this)"
+        />
+        <img
+          src="https://i.pinimg.com/564x/4f/ec/57/4fec57f69c10a08df2496be4b9b06771.jpg"
+          onclick="changeImage(this)"
+          alt="Thumbnail 3"
+        />
+        <img
+          src="https://cdn-fkmoj.nitrocdn.com/xvpOGZRTxJUhXKufpOYIruQcRqtvAAQX/assets/images/optimized/rev-4e1f421/media.briantracy.com/blog/wp-content/uploads/2024/01/23112014/Quote-29.png"
+          alt="Thumbnail 4"
+          onclick="changeImage(this)"
+        />
+      </div>
+    </div>
+    <script>
+      function changeImage(thumbnail) {
+        document.querySelector('#preview').src = thumbnail.src;
+        let thumbs = document.querySelectorAll('.thumbnails img'); // when we use all it stores the values in form of array i.e y we use array
+        for (let i = 0; i < thumbs.length; i++) {
+          thumbs[i].classList.remove('active');
+        }
+        thumbnail.classList.add('active');
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+.hidden{
+    display:none !important;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+     background-color: #f8f8f8;
+     margin:0;
+     transition: filter 0.3s ease;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1
+}
+.modals{
+  margin-top: 20px;
+  border: 1px solid #aaa;
+  padding: 20px;
+  width: 500px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 1001; 
+}
+
+#open{
+    padding:10px;
+    margin:40px;
+    border-radius: 5px;
+    background-color: skyblue;
+    border:none;
+    font-size: 14px;
+    cursor: pointer;
+}
+#close{
+ position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: skyblue;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.overlays {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+ backdrop-filter: blur(2px); /* this adds blur to everything behind it */
+  background-color: rgba(0, 0, 0, 0.2); /* semi-transparent black overlay */
+  z-index: 1000;
+}

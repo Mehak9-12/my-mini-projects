@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: linear-gradient(135deg, #e3f2fd, #fce4ec);
+      }
+
+      .counter-box {
+        background: white;
+        padding: 30px 40px;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        min-width: 280px;
+      }
+
+      #number {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: red; /* start with red at 0 */
+      }
+
+      button {
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 10px 20px;
+        margin: 0 10px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      #increase {
+        background: #4caf50;
+        color: white;
+      }
+      #increase:hover {
+        background: #45a049;
+        transform: scale(1.05);
+      }
+
+      #decrease {
+        background: #f44336;
+        color: white;
+      }
+      #decrease:hover {
+        background: #d32f2f;
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <span class="counter-box">
+      <p id="number">The number is : 0</p>
+      <button id="increase" onclick="increasing()">➕ Increase"</button>
+      <button id="decrease">➖ Decrease</button>
+    </span>
+    <script>
+      let count = 0;
+      function increasing() {
+        count++;
+        document.querySelector('#number').textContent =
+          'The number is :' + count;
+        document.querySelector('#number').style.color =
+          count > 0 ? 'green' : 'red';
+      }
+      let btnDecrease = document.querySelector('#decrease');
+      const decreasing = () => {
+        if (count > 0) {
+          count--;
+          document.querySelector('#number').textContent =
+            'The number is :' + count;
+          document.querySelector('#number').style.color =
+            count > 0 ? 'green' : 'red';
+        }
+      };
+      btnDecrease.addEventListener('click', decreasing);
+    </script>
+  </body>
+</html>

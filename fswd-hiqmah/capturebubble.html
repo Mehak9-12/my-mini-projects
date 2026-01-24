@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Event Capturing & Bubbling Demo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f0f4f8;
+        padding: 40px;
+        text-align: center;
+      }
+      h1 {
+        color: #333;
+        margin-bottom: 20px;
+      }
+      /* Nested boxes */
+      #outer {
+        background: #ffe4b5;
+        border: 3px solid #d88a00;
+        padding: 30px;
+        width: 300px;
+        margin: 0 auto;
+        border-radius: 12px;
+      }
+      #inner {
+        background: #add8e6;
+        border: 3px solid #0077b6;
+        padding: 30px;
+        border-radius: 10px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      button:hover {
+        background: #43a047;
+      }
+      /* Output area */
+      #log {
+        margin-top: 30px;
+        text-align: left;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        background: #fff;
+        border: 2px solid #ccc;
+        padding: 15px;
+        border-radius: 10px;
+        min-height: 100px;
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Event Capturing & Bubbling</h1>
+
+    <div id="outer">
+      Outer DIV
+      <div id="inner">
+        Inner DIV
+        <button id="btn">Click Me</button>
+      </div>
+    </div>
+
+    <div id="log">
+      <strong>Click the button to see the event flow here…</strong>
+    </div>
+
+    <script>
+      const logBox = document.getElementById('log');
+
+      // helper to add messages
+      function show(msg, color) {
+        const p = document.createElement('p');
+        p.textContent = msg;
+        p.style.color = color;
+        logBox.appendChild(p);
+      }
+
+      // Clear log each time you click the button
+      document.getElementById('btn').addEventListener('click', () => {
+        logBox.innerHTML = '';
+      });
+
+      // Capturing listeners (run first: outer → inner)
+      document
+        .getElementById('outer')
+        .addEventListener('click', () => show('CAPTURE: outer', 'blue'), true);
+      document
+        .getElementById('inner')
+        .addEventListener('click', () => show('CAPTURE: inner', 'blue'), true);
+
+      // Bubbling listeners (run after target: inner → outer)
+      document
+        .getElementById('inner')
+        .addEventListener('click', () => show('BUBBLE: inner', 'green'));
+      document
+        .getElementById('outer')
+        .addEventListener('click', () => show('BUBBLE: outer', 'green'));
+    </script>
+  </body>
+</html>

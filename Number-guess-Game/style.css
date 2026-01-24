@@ -1,0 +1,95 @@
+body {
+      font-family: Arial, sans-serif;
+      background: lightgray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .game-container {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      width: 320px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    #message {
+      font-size: 18px;
+      margin: 15px 0;
+      color: black;
+    }
+
+    input[type="number"] {
+      width: 100px;
+      padding: 8px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 10px 15px;
+      margin: 5px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    #checkBtn {
+      background:orange;
+      color: white;
+    }
+    #reset{
+        background:red;
+        color:white;
+    }
+    #hard{
+      color:white;
+      background-color: rgb(131, 22, 186);
+
+    }
+    #easy{
+      color:white;
+      background-color: darkolivegreen;
+    }
+    button:hover {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+
+  button.active {
+  background-color: green !important;
+  color: white;
+  border: 2px solid #0b5d1e;
+  box-shadow: 0 0 0 2px rgba(0, 128, 0, 0.3);
+  transform: scale(1.03);
+}
+
+
+
+    #attempts {
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      background: blue;
+      padding: 8px 15px;
+      border-radius: 12px;
+      display: inline-block;
+      margin-top: 15px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    }

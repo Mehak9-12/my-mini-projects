@@ -1,0 +1,67 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color:#bae6ba;
+}
+
+/* Main container with Flexbox */
+div.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background-color: white;
+  border-radius: 8px;
+  width: 80%;
+  margin: 0 auto;
+  max-width: 600px;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+/* Styling for the accordion tabs */
+.tab {
+  display: block;
+  padding: 15px;
+  background-color: #B0C4DE;
+  color: #333;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Tab hover effect */
+.tab:hover {
+  background-color: #e7e7e7;
+}
+
+/* Active tab styling */
+.tab.active-tab {
+  background-color: blue;
+  color: white;
+}
+
+/* Content styling (hidden by default) */
+.content {
+  display: none;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+/* Show content when tab is active */
+.tab.active-tab + .content {
+  display: block;
+}
